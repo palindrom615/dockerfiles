@@ -73,10 +73,12 @@ virtual-root=/-/
 side-by-side-diffs=0
 
 # needs python-pygments
-source-filter=/usr/lib/cgit/filters/syntax-highlighting.py
+source-filter=/usr/lib/cgit/filters/syntax-highlighting.sh
 
 # Format markdown, restructuredtext, manpages, text files, and html files through the right converters
-about-filter=/usr/lib/cgit/filters/about-formatting.sh
+#about-filter=/usr/lib/cgit/filters/about-formatting.sh
+
+auth-filter=lua:/var/lib/cgit/simple-auth.lua
 
 # available snaps
 snapshots=tar.gz zip
