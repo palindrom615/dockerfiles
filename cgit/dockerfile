@@ -1,2 +1,18 @@
 FROM gcc:9.3.0 AS build-env
 
+RUN apt install libssl-dev zlib1g zlib1g-dev
+
+COPY ./cgit /opt/src
+WORKDIR /opt/src
+
+RUN make install
+
+FROM nginx:1.19.6-alpine
+
+EXPOSE 80
+
+COPY --from=build-env /var/www/htdocs/cgit /var/www/htdocs/cgit
+COPY --from=build-env /opt/src/filters /usr/local/lib/cgit/filters
+COPY ./nginx.conf /usr/local/nginx/conf
+
+CMD nginx
