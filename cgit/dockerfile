@@ -1,18 +1,13 @@
-FROM gcc:9.3.0 AS build-env
+FROM alpine:3.12.3
 
-RUN apt install libssl-dev zlib1g zlib1g-dev
-
-COPY ./cgit /opt/src
-WORKDIR /opt/src
-
-RUN make install
-
-FROM nginx:1.19.6-alpine
+RUN apk add --no-cache --purge -uU \
+	    ca-certificates curl cgit lighttpd git \
+    && echo 'include "cgit.conf"' >> /etc/lighttpd/lighttpd.conf
 
 EXPOSE 80
 
-COPY --from=build-env /var/www/htdocs/cgit /var/www/htdocs/cgit
-COPY --from=build-env /opt/src/filters /usr/local/lib/cgit/filters
-COPY ./nginx.conf /usr/local/nginx/conf
+COPY cgit.conf /etc/lighttpd/cgit.conf
 
-CMD nginx
+VOLUME /etc/cgitrc, /var/repositories
+
+CMD lighttpd -D -f /etc/lighttpd/lighttpd.conf
