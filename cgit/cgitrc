@@ -11,8 +11,6 @@ enable-tree-linenumbers=1
 
 # Sort  by age/name
 repository-sort=age
-branch-sort=age
-commit-sort=age
 
 max-stats=year
 
@@ -91,3 +89,5 @@ readme=:install
 section-from-path=1
 
 scan-path=/var/repositories/
+
+include=/etc/cgitrc.d

@@ -4,11 +4,12 @@ simple cgit container with lighttpd. No default additional auth layer. No touch 
 
 ## volumes
 
-| mount point         | description                                                              |
-| ------------------- | ------------------------------------------------------------------------ |
-| `/var/repositories` | `scan-path` of cgit i.e. "A path which will be scanned for repositories" |
-| `/etc/cgitrc`       | cgit config file: see https://git.zx2c4.com/cgit/tree/cgitrc.5.txt       |
-| `/var/lib/cgit`     | left for user's own files e.g. lua script or filter                      |
+| mount point                      | description                                                        |
+| -------------------------------- | ------------------------------------------------------------------ |
+| `/var/repositories`              | `scan-path` of cgit. your bare repositories stands here.           |
+| `/etc/cgitrc.d`                    | cgit config overriding directory: see https://git.zx2c4.com/cgit/tree/cgitrc.5.txt |
+| `/var/lib/cgit`                  | left for user's own files e.g. lua script or filter                |
+| `/usr/share/webapps/cgit/static` | left for customizing css files                                     |
 
 ## ports
 

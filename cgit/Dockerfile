@@ -8,7 +8,8 @@ RUN apk add --no-cache --purge -uU cgit lighttpd git lua5.3 lua5.3-dev lua5.3-po
 EXPOSE 80
 
 COPY cgit.conf /etc/lighttpd/cgit.conf
+COPY cgitrc /etc/cgitrc
 
-VOLUME ["/etc/cgitrc", "/var/repositories", "/var/lib/cgit"]
+VOLUME ["/etc/cgitrc.d", "/var/repositories", "/var/lib/cgit", "/usr/share/webapps/cgit/static"]
 
 CMD lighttpd -D -f /etc/lighttpd/lighttpd.conf
