@@ -1,13 +1,41 @@
-# css
+# Enable caching of up to 1000 output entriess
+cache-size=1000
+
+# Specify the css url
 css=/cgit.css
+
+# Enable ASCII art commit history graph on the log pages
+enable-commit-graph=1
+
+# Show number of affected files per commit on the log pages
+enable-log-filecount=1
+
+# Show number of added/removed lines per commit on the log pages
+enable-log-linecount=1
+
+# Add a cgit favicon
+favicon=/favicon.ico
+
+# Use a custom logo
 logo=/cgit.png
 
-enable-commit-graph=1
-enable-git-config=1
-enable-log-filecount=1
-enable-log-linecount=1
-enable-remote-branches=1
-enable-tree-linenumbers=1
+# Enable statistics per week, month and quarter
+max-stats=quarter
+
+# Allow download of tar.gz, tar.bz2 and zip-files
+snapshots=tar.gz tar.bz2 zip
+
+##
+## List of common mimetypes
+##
+
+mimetype.gif=image/gif
+mimetype.html=text/html
+mimetype.jpg=image/jpeg
+mimetype.jpeg=image/jpeg
+mimetype.pdf=application/pdf
+mimetype.png=image/png
+mimetype.svg=image/svg+xml
 
 # Sort  by age/name
 repository-sort=age
@@ -17,28 +45,16 @@ max-stats=year
 # show local time not utc
 local-time=1
 
-root-title=cGit
-root-desc=Keep ALL the stuff in VERSION CONTROL!!
-root-readme=/var/www/about.html
-# footer=/var/www/footer.html
-
 # if you do not want that webcrawler (like google) index your site
 robots=noindex, nofollow
 
 virtual-root=/-/
-side-by-side-diffs=0
 
 source-filter=/usr/lib/cgit/filters/syntax-highlighting.py
 # Format markdown, restructuredtext, manpages, text files, and html files through the right converters
 about-filter=/usr/lib/cgit/filters/about-formatting.sh
 
 #auth-filter=lua:/var/lib/cgit/simple-auth.lua
-
-# available snaps
-snapshots=tar.gz zip
-
-# Specify some default clone urls using macro expansion
-#clone-url=ssh://pi.lan:repo/$CGIT_REPO_URL
 
 ##
 ## List of common mimetypes
