@@ -50,7 +50,7 @@ robots=noindex, nofollow
 
 virtual-root=/-/
 
-source-filter=/usr/lib/cgit/filters/syntax-highlighting.py
+source-filter=/usr/lib/cgit/filters/syntax-highlighting.sh
 # Format markdown, restructuredtext, manpages, text files, and html files through the right converters
 about-filter=/usr/lib/cgit/filters/about-formatting.sh
 

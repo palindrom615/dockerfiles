@@ -5,7 +5,7 @@ simple cgit container with lighttpd. No default additional auth layer. No touch 
 [Some tweaks added](./cgitrc) besides default settings. like,
 
 - volume mounted `scan-path`
-- built-in syntax highlighting with python pygments enabled
+- built-in syntax highlighting
 - stats, graph, README page rendering enabled
 - web crawler indexing denied by `robot.txt`
 - etc...
