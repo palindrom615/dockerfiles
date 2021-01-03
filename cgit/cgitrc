@@ -106,4 +106,4 @@ section-from-path=1
 
 scan-path=/var/repositories/
 
-include=/etc/cgitrc.d
+include=/etc/cgitrc.d/cgitrc
